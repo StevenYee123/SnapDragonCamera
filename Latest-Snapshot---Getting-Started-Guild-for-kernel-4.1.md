@@ -17,7 +17,7 @@ make ARCH=arm64 CROSS_COMPILE=$AOSP_SRC/prebuilts/gcc/linux-x86/aarch64/aarch64-
 ### To build AOSP (Android M)
 
 ```
-repo init -u git clone https://android.googlesource.com/platform/manifest -b android-6.0.0_r260
+repo init -u https://android.googlesource.com/platform/manifest -b android-6.0.0_r260
 cd .repo/
 git clone https://github.com/96boards/android_manifest -b android-6.0 local_manifests
 cd ../
