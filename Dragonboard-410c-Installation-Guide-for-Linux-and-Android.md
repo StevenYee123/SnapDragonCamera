@@ -204,7 +204,7 @@ the DragonBoard™ 410c:
 When the board powers up, it will boot into an installer similar to the
 figure below:
 
-![](https://github.com/96boards/documentation/blob/master/dragonboard410c/images/image00.jpg)
+![](https://github.com/96boards/documentation/blob/master/ConsumerEdition/DragonBoard-410c/AdditionalDocs/Images/Wiki/image00.jpg)
 
 - Select the image to install and then click on “Install” (or type
   “i”) and the OS will be installed into the eMMC memory on the
@@ -626,7 +626,7 @@ hardware if the wrong voltage cable is used.
 A picture of the FTDI cable connected to the DragonBoard™ 410c is shown
 below:
 
-![](https://github.com/96boards/documentation/blob/master/dragonboard410c/images/image01.jpg)
+![](https://github.com/96boards/documentation/blob/master/ConsumerEdition/DragonBoard-410c/AdditionalDocs/Images/Wiki/image00.jpg)
 Figure 1: FTDI Cable connected to J8 Header on DragonBoard™ 410c
 
 **Warning:** Make sure that the extra wires are not touching the board in
