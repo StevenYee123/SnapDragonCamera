@@ -16,25 +16,25 @@ For now there is no rescue tool which is provided, so it is not recommended to c
 
 # Installing Debian
 
-The DB820c is supported starting with build #8 from : http://snapshots.linaro.org/debian/pre-built/snapdragon-tracking-arm64/. Build #8 is based on 4.6 kernel, and has minimal features set (mostly console, UFS, 4 core running at the lowest speed). Features will be added in this builds stream. While build #8 is based on 4.6 kernel, next builds will switch to 4.7 and so on, until we reach the next LTS kernel version.
+Debian builds for the DB820c can be found here: http://builds.96boards.org/snapshots/dragonboard820c/linaro/debian/. They have for now has minimal features set (mostly console, UFS, 4 core running at the lowest speed). Features will be added in this builds stream. Note that kernel version might changes regularly and without notice until mid 2017.
 
 To install the Debian root file system:
 
-1. Download either the `developer` or the `alip` image from the link above
+1. Download either the `developer`` image from the link above
 1. Uncompress the root file system image
 1. Flash the image into `userdata` (or `system`).
 
-So, assuming you are using build #8:
+So, assuming you are trying to use the latest build:
 
-    wget http://snapshots.linaro.org/debian/pre-built/snapdragon-tracking-arm64/8/linaro-jessie-developer-qcom-snapdragon-arm64-20160706-8.img.gz
-    gunzip linaro-jessie-developer-qcom-snapdragon-arm64-20160706-8.img.gz
-    fastboot flash userdata linaro-jessie-developer-qcom-snapdragon-arm64-20160706-8.img
+    wget http://builds.96boards.org/snapshots/dragonboard820c/linaro/debian/latest/linaro-stretch-developer-qcom-snapdragon-arm64-*.img.gz
+    gunzip linaro-stretch-developer-qcom-snapdragon-arm64-*.img.gz
+    fastboot flash userdata linaro-stretch-developer-qcom-snapdragon-arm64-*.img
 
 You can download the prebuilt boot image as well, from the same location. However note that the boot image is by default going to try to mount the file system on `rootfs` partition, like on DragonBoard 410c, so you need to update the boot image before flashing it, since we do not (yet) use the `rootfs` partition on DB820c:
 
-    wget http://snapshots.linaro.org/debian/pre-built/snapdragon-tracking-arm64/8/boot-linaro-jessie-qcom-snapdragon-arm64-20160706-8.img.gz
-    gunzip boot-linaro-jessie-qcom-snapdragon-arm64-20160706-8.img.gz
-    abootimg -u boot-linaro-jessie-qcom-snapdragon-arm64-20160706-8.img -c "cmdline=root=/dev/disk/by-partlabel/userdata rw rootwait console=tty0 console=ttyMSM0,115200n8"
+    wget http://builds.96boards.org/snapshots/dragonboard820c/linaro/debian/latest/boot-linaro-stretch-qcom-snapdragon-arm64-*.img.gz
+    gunzip boot-linaro-stretch-qcom-snapdragon-arm64-*.img.gz
+    abootimg -u boot-linaro-stretch-qcom-snapdragon-arm64-*.img -c "cmdline=root=/dev/disk/by-partlabel/userdata rw rootwait console=tty0 console=ttyMSM0,115200n8"
 
 You might need to replace `userdata` with `system`, of course.
 
