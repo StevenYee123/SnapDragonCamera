@@ -6,7 +6,7 @@ _The meta-questions describe the role of this document. The questions in this se
 
 Sure. The only things you really need to know is that:
 
-1. If you want your changes to go live immediately then you need to contact Vee (@vchong). We haven't fully automated the flow from the nursery to the forums so we need the ping for anything urgent.
+1. If you want your changes to go live immediately then you need to contact Victor (@vchong). We haven't fully automated the flow from the nursery to the forums so we need the ping for anything urgent.
 
 2. If the question does not yet have an adequate answer, perhaps because you're still thinking about it or because you want to encourage someone else to write one, then make sure to add '(DRAFT)' somewhere in the question. Draft questions are never copied to the forum. 
 
