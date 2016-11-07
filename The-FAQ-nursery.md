@@ -467,19 +467,19 @@ After confirming the DragonBoard 410C is connected with Windows PC with microUSB
 
 The Device Manager on Windows should show this screen.
 
-[[https://farm8.staticflickr.com/7691/28039568542_0ac17e9a7d_z_d.jpg]]
+![](https://farm8.staticflickr.com/7691/28039568542_0ac17e9a7d_z_d.jpg)
 
-[[https://farm8.staticflickr.com/7733/27528300213_ec6f79725a_z_d.jpg]]
+![](https://farm8.staticflickr.com/7733/27528300213_ec6f79725a_z_d.jpg)
 
-[[https://farm8.staticflickr.com/7211/28143779825_292a18c39d_z_d.jpg]]
+![](https://farm8.staticflickr.com/7211/28143779825_292a18c39d_z_d.jpg)
 
-[[https://farm8.staticflickr.com/7298/27528300123_e34263e1c0_z_d.jpg]]
+![](https://farm8.staticflickr.com/7298/27528300123_e34263e1c0_z_d.jpg)
 
-[[https://farm8.staticflickr.com/7324/28039568362_d4825d15db_z_d.jpg]]
+![](https://farm8.staticflickr.com/7324/28039568362_d4825d15db_z_d.jpg)
 
-[[https://farm8.staticflickr.com/7301/28039568452_1e00ec9011_z_d.jpg]]
+![](https://farm8.staticflickr.com/7301/28039568452_1e00ec9011_z_d.jpg)
 
-[[https://farm8.staticflickr.com/7283/28143780045_6582009ab0_z_d.jpg]]
+![](https://farm8.staticflickr.com/7283/28143780045_6582009ab0_z_d.jpg)
 
 
 # Bubblegum-96 FAQ
