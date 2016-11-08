@@ -1,5 +1,8 @@
 This page has instructions to get started with Debian or OpenEmbedded on the DragonBoard 820c board.
 
+# Disclaimer 
+DragonBoard 820c is not yet commercially available and is in beta testing only. Please expect limited documentation and support until further notice.
+
 # Bootloaders
 
 Throughout these instructions, we are assuming that you have been able to flash the board with an initial build from Qualcomm such that you can boot the board into fastboot. If you cannot get the board to boot into fastboot, then you need to get in touch with the person that provided you with the board.
