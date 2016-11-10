@@ -414,7 +414,7 @@ There are great descriptions of what have improved on the new releases and known
 The usb driver for adb on windows requires modification from Android web site.
 We have made the revised usb driver. Please try this driver.
 
-* [adb usb driver windows DB410C](https://fileserver.linaro.org/owncloud/index.php/s/FR4vgUL2d101HKn)
+* [adb usb driver windows DB410C](https://github.com/96boards/documentation/blob/master/ConsumerEdition/DragonBoard-410c/Downloads/Files/adb_usb_driver_windows_DB410C.zip)
 
 **Q: How to install adb usb driver on Windoes for DragonBoard 410C?**
 
