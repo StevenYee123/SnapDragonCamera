@@ -1,1 +1,0 @@
-This page has moved [here](https://github.com/96boards/documentation/blob/master/ConsumerEdition/HiKey/README.md)
