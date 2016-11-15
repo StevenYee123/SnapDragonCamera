@@ -1,1 +1,0 @@
-This page has moved [here](https://github.com/96boards/documentation/blob/master/ConsumerEdition/Bubblegum-96/README.md)
