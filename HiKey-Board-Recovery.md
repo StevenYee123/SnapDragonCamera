@@ -1,1 +1,0 @@
-This page has moved [Here](https://github.com/96boards/documentation/blob/master/ConsumerEdition/HiKey/Installation/BoardRecovery.md)
