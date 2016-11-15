@@ -1,2 +1,0 @@
-This page has moved [HERE](https://github.com/Linaro/documentation/blob/master/Reference-Platform/EECommon/DHCP-TFTP-Server-UEFI.md)
-
