@@ -1,0 +1,1 @@
+This page has moved [here](https://github.com/Linaro/documentation/blob/master/Reference-Platform/Extras/PreviousReleases/RPB_15.10/README.md)
