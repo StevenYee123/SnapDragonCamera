@@ -114,7 +114,6 @@ Reading the blog series is a great introduction to program GPIO/I2C devices on 9
 * [Programming GPIO using libsoc](http://www.96boards.org/blog/96boards-box-experience-guide-5/)
 * [Programing I2C devices with libmraa and libupm](http://www.96boards.org/blog/programing-i2c-devices-libmraa-libupm/)
 
-
 **Q: Which Mezzanine boards I should buy? (DRAFT)**
 
 Excellent question. I hope this will be a guide for selection.
@@ -213,6 +212,36 @@ The images from 15.11 release, the UART3 (/dev/ttyAMA3) works as the serial cons
 Please refer the link bellow to use the serial console on HiKey.
 
 * [Using serial console](http://www.96boards.org/forums/topic/short-intro-to-start-your-hikey-with-serial-console/)
+
+**Q: Does Hikey support system suspend-to-RAM?**
+
+It does! Although before intiating the suspend it is import to specific a wake up source, otherwise it is impossible to restart the board. The wake up source can either be the Real Time Clock (RTC) or one of the GPIO pins on the low-speed connector.
+
+Note: _UART and USB wake up is not possible for HiKey. This is part of the design of the SoC and we don't see any way to workaround that._
+
+1. For RTC wake up, you must enable CONFIG_RTC_DRV_PL031. This is supported by default on mainline kernel. Once the board has booted you can use the following command to request a wake up alarm (in this case the alarm will expire after 10 seconds):
+
+    echo +10 > /sys/class/rtc/rtc0/wakealarm; echo mem > /sys/power/state
+
+2. To use the GPIO pins as a wake up signal use the following script as a reference:
+
+    # 488: GPIO2_0, 490: GPIO2_2,
+    # 492: GPIO2_4, 495: GPIO2_7
+    # GPIO2_1, GPIO2_3 busy
+
+    echo 488 > /sys/class/gpio/export
+    echo 490 > /sys/class/gpio/export
+    echo 492 > /sys/class/gpio/export
+    echo 495 > /sys/class/gpio/export
+
+    echo in > /sys/class/gpio/gpio488/direction
+    echo both > /sys/class/gpio/gpio488/edge
+    echo in > /sys/class/gpio/gpio490/direction
+    echo both > /sys/class/gpio/gpio490/edge
+    echo in > /sys/class/gpio/gpio492/direction
+    echo both > /sys/class/gpio/gpio492/edge
+    echo in > /sys/class/gpio/gpio495/direction
+    echo both > /sys/class/gpio/gpio495/edge
 
 **Q: What is the link for Android Open Source Project (AOSP) support on HiKey?**
 
