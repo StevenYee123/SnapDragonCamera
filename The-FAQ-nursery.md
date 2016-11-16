@@ -220,28 +220,30 @@ It does! Although before intiating the suspend it is import to specific a wake u
 Note: _UART and USB wake up is not possible for HiKey. This is part of the design of the SoC and we don't see any way to workaround that._
 
 1. For RTC wake up, you must enable CONFIG_RTC_DRV_PL031. This is supported by default on mainline kernel. Once the board has booted you can use the following command to request a wake up alarm (in this case the alarm will expire after 10 seconds):
-
-    echo +10 > /sys/class/rtc/rtc0/wakealarm; echo mem > /sys/power/state
+~~~
+echo +10 > /sys/class/rtc/rtc0/wakealarm; echo mem > /sys/power/state
+~~~
 
 2. To use the GPIO pins as a wake up signal use the following script as a reference:
+~~~
+# 488: GPIO2_0, 490: GPIO2_2,
+# 492: GPIO2_4, 495: GPIO2_7
+# GPIO2_1, GPIO2_3 busy
 
-    # 488: GPIO2_0, 490: GPIO2_2,
-    # 492: GPIO2_4, 495: GPIO2_7
-    # GPIO2_1, GPIO2_3 busy
+echo 488 > /sys/class/gpio/export
+echo 490 > /sys/class/gpio/export
+echo 492 > /sys/class/gpio/export
+echo 495 > /sys/class/gpio/export
 
-    echo 488 > /sys/class/gpio/export
-    echo 490 > /sys/class/gpio/export
-    echo 492 > /sys/class/gpio/export
-    echo 495 > /sys/class/gpio/export
-
-    echo in > /sys/class/gpio/gpio488/direction
-    echo both > /sys/class/gpio/gpio488/edge
-    echo in > /sys/class/gpio/gpio490/direction
-    echo both > /sys/class/gpio/gpio490/edge
-    echo in > /sys/class/gpio/gpio492/direction
-    echo both > /sys/class/gpio/gpio492/edge
-    echo in > /sys/class/gpio/gpio495/direction
-    echo both > /sys/class/gpio/gpio495/edge
+echo in > /sys/class/gpio/gpio488/direction
+echo both > /sys/class/gpio/gpio488/edge
+echo in > /sys/class/gpio/gpio490/direction
+echo both > /sys/class/gpio/gpio490/edge
+echo in > /sys/class/gpio/gpio492/direction
+echo both > /sys/class/gpio/gpio492/edge
+echo in > /sys/class/gpio/gpio495/direction
+echo both > /sys/class/gpio/gpio495/edge
+~~~
 
 **Q: What is the link for Android Open Source Project (AOSP) support on HiKey?**
 
