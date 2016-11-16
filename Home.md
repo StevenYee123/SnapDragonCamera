@@ -16,6 +16,7 @@ Welcome to the supporting documentation for <a href="http://96boards.org" target
 
 - [Consumer Edition](https://github.com/96boards/documentation/blob/master/ConsumerEdition/README.md)
 - [Enterprise Edition](https://github.com/96boards/documentation/blob/master/EnterpriseEdition/README.md)
+- [IoT Edition](https://github.com/96boards/documentation/blob/master/IoTEdition/README.md)
 
 ***
 
