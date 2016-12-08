@@ -67,8 +67,8 @@ The source code is available from:
 ## Build instructions
 
 Prerequisites:
-* GCC 4.8 or 4.9 - cross-toolchain for Aarch64 available in your PATH. [Linaro GCC 4.9-2015.02](http://releases.linaro.org/15.02/components/toolchain/binaries/aarch64-linux-gnu/gcc-linaro-4.9-2015.02-3-x86_64_aarch64-linux-gnu.tar.xz) is used in the build instructions.
-* GCC cross-toolchain for gnueabihf available in your PATH. [Linaro GCC 4.9-2015.02](http://releases.linaro.org/15.02/components/toolchain/binaries/arm-linux-gnueabihf/gcc-linaro-4.9-2015.02-3-x86_64_arm-linux-gnueabihf.tar.xz) is used in the build instructions.
+* GCC 4.8 or 4.9 - cross-toolchain for Aarch64 available in your PATH. [Linaro GCC 4.9-2015.02](http://releases.linaro.org/archive/15.02/components/toolchain/binaries/aarch64-linux-gnu/gcc-linaro-4.9-2015.02-3-x86_64_aarch64-linux-gnu.tar.xz) is used in the build instructions.
+* GCC cross-toolchain for gnueabihf available in your PATH. [Linaro GCC 4.9-2015.02](http://releases.linaro.org/archive/15.02/components/toolchain/binaries/arm-linux-gnueabihf/gcc-linaro-4.9-2015.02-3-x86_64_arm-linux-gnueabihf.tar.xz) is used in the build instructions.
 * GPT fdisk (gdisk package from your favorite distribution).
 
 ### Install custom toolchain(s)
