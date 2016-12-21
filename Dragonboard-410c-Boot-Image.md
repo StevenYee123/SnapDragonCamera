@@ -1,0 +1,1 @@
+This page has been made generic for more than just DB410c, and has been moved [here](Dragonboard-Boot-Image) in that process.
