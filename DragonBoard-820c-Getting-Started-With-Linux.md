@@ -69,4 +69,4 @@ Additionally, you might want or need to compile the kernel modules:
 
     make -j4 modules KERNELRELEASE=`make kernelversion`-linaro-lt-qcom
 
-To boot the kernel image, you will need a fastboot compatible boot image, and you can refer to [[Dragonboard-410c-Boot-Image]] for instructions to create such an image.
+To boot the kernel image, you will need a fastboot compatible boot image, and you can refer to [[Dragonboard-Boot-Image]] for instructions to create such an image.
