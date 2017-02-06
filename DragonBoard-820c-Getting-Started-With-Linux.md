@@ -43,7 +43,7 @@ You might need to replace `userdata` with `system`, of course.
 
 # Installing an Open Embedded based image
 
-Initial support for DragonBoard 820c has been added into the OpenEmbedded QCOM BSP later, including the appropriate kernel recipe. To build an image for Dragonboard 820c , simply follow the same instructions as usual, from [[Dragonboard-410c-OpenEmbedded-and-Yocto]]. When you select the MACHINE to build for, pick `dragonboard-820c`.
+Initial support for DragonBoard 820c has been added into the OpenEmbedded QCOM BSP later, including the appropriate kernel recipe. To build an image for Dragonboard 820c , simply follow the same instructions as usual, from [Dragonboard-410c-OpenEmbedded-and-Yocto](https://github.com/Linaro/documentation/blob/master/Reference-Platform/CECommon/OE.md). When you select the MACHINE to build for, pick `dragonboard-820c`.
 
 The board is being added to the Linaro Reference Platform OpenEmbedded builds, and prebuilt images for this board should appear in the coming days here : http://builds.96boards.org/snapshots/reference-platform/openembedded/.
 
