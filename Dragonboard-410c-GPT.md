@@ -1,1 +1,1 @@
-This page has moved [here](https://github.com/96boards/documentation/blob/master/ConsumerEdition/DragonBoard-410c/Configuration/README.md)
+This page has moved [here](https://github.com/96boards/documentation/blob/master/ConsumerEdition/DragonBoard-410c/Guides/GPT.md)
