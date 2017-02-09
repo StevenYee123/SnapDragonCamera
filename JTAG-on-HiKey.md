@@ -1,1 +1,1 @@
-This page has moved [here](https://github.com/96boards/documentation/blob/master/ConsumerEdition/HiKey/Configuration/JTAG/README.md)
+This page has moved [here](https://github.com/96boards/documentation/blob/master/ConsumerEdition/HiKey/Guides/JTAG/README.md)
