@@ -7,6 +7,18 @@ DragonBoard 820c is not yet commercially available and is in beta testing only. 
 
 Throughout these instructions, we are assuming that you have been able to flash the board with an initial build from Qualcomm such that you can boot the board into fastboot. If you cannot get the board to boot into fastboot, then you need to get in touch with the person that provided you with the board.
 
+In recent bootloaders from Qualcomm, we noticed that support for splash screen was enabled in LK (in Android builds), so that the snapdragon logo can be displayed very early in the boot process.
+
+The splash screen support in bootloader creates issues with the linux kernel, as we don't have proper handoff of resources between LK and kernel as of yet. As such when using Linux releases, and especially the Linaro kernel, we need to explicitly disable display in LK. If it is enabled you will notice that the kernel fails to boot and abruptly returns into SBL (reboots). To disable display support in LK, put the board into fastboot mode and run
+
+    fastboot oem select-display-panel none
+
+By default it should be 'hdmi', and you can thus revert to default settings (if you need to run Android) with the following command:
+
+    fastboot oem select-display-panel hdmi
+
+After you set it to none, please power off/reboot and try booting linux kernel again.
+
 # Onboard storage
 
 The onboard storage is partionned such as : 
