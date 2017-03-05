@@ -49,17 +49,17 @@ The board is being added to the Linaro Reference Platform OpenEmbedded builds, a
 
 # Kernel source code
 
-The Linux kernel used for DragonBoard 820c can be found in the [Linaro Qualcomm Landing Team git repository](https://git.linaro.org/landing-teams/working/qualcomm/kernel.git). For now the support for this board is preliminary and can only be found in the `integration-linux-qcomlt` branch, which is regularly rebased on recent mainline.
+The Linux kernel used for DragonBoard 820c can be found in the [Linaro Qualcomm Landing Team git repository](https://git.linaro.org/landing-teams/working/qualcomm/kernel.git). For now the support for this board is preliminary and can only be found in either 'release' branches named as `db820c/qcomlt-x.y` (the latest one being the most up-to-date/recent) or the `integration-linux-qcomlt` branch, which is regularly rebased on recent mainline, and is used for developers.
 
     git: http://git.linaro.org/landing-teams/working/qualcomm/kernel.git
-    branch: integration-linux-qcomlt
+    branch: db820c/qcomlt-x.y or integration-linux-qcomlt
     defconfig: arch/arm64/defconfig kernel/configs/distro.config
 
 To build the Linux kernel, you can use the following instructions:
 
     git clone -n http://git.linaro.org/landing-teams/working/qualcomm/kernel.git
     cd kernel
-    git checkout -b kernel-16.06 debian-qcom-dragonboard410c-16.06
+    git checkout -b db820c <remote branch>
     export ARCH=arm64
     export CROSS_COMPILE=<path to your GCC cross compiler>/aarch64-linux-gnu-
     make defconfig distro.config
