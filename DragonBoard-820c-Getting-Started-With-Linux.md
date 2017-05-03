@@ -77,6 +77,7 @@ You can remove all previous content. Then run, as root:
     apt update
     apt dist-upgrade
     apt install lxqt
+    apt install chromium gstreamer1.0-plugins-bad gstreamer1.0-libav
 
 Of course you need to make sure that Ethernet is working, as you will download everything from the main Debian archives. Once these commands finish, you are running Debian `sid` and you have installed the LxQt desktop environment (you can install any other desktop, but LxQt is the reference desktop used in all Linaro builds). 
 
