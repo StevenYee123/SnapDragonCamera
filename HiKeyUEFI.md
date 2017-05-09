@@ -84,10 +84,10 @@ export PATH="${PWD}/arm-tc/bin:${PWD}/arm64-tc/bin:$PATH"
 
 ```shell
 # --depth 1 means to fetch code without commit history
-git clone -b hikey --depth 1 https://github.com/96boards/edk2.git linaro-edk2
+git clone -b hikey-aosp --depth 1 https://github.com/96boards-hikey/edk2.git linaro-edk2
 git clone -b hikey --depth 1 https://github.com/96boards-hikey/arm-trusted-firmware.git
-git clone -b hikey --depth 1 https://github.com/96boards/LinaroPkg.git
-git clone --depth 1 https://github.com/96boards/l-loader.git
+git clone -b hikey-aosp --depth 1 https://github.com/96boards-hikey/LinaroPkg.git
+git clone --depth 1 https://github.com/96boards-hikey/l-loader.git
 git clone git://git.linaro.org/uefi/uefi-tools.git
 
 # Optionally, if also building OP-TEE
