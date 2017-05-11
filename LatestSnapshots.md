@@ -490,7 +490,7 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="18d1", ATTRS{idProduct}=="d00d", MODE="0666"
 SUBSYSTEM=="usb", ATTRS{idVendor}=="12d1", MODE="0666", ENV{ID_MM_DEVICE_IGNORE}="1"
 ```
 
-**Problems with Python Downloader**<br\>
+**Problems with Python Downloader**<br>
 
 The Python download script requires Python 2. Make sure you're not defaulted to Python 3 by typing:
 ```
