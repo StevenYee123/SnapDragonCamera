@@ -281,21 +281,21 @@ previous section.  This procedure also assumes that the developer will be using 
 
 Flash the Linaro/Debian boot image and root file system by
 performing the following steps:
-- Initiate the download of the latest Debian boot image zip by clicking [**here**](http://builds.96boards.org/releases/dragonboard410c/linaro/debian/latest/boot-linaro-jessie-qcom-snapdragon-arm64*.img.gz)
-- Initiate the download of the latest Debian Root File System(RootFS) zip by clicking [**here**](http://builds.96boards.org/releases/dragonboard410c/linaro/debian/latest/linaro-jessie-developer-qcom-snapdragon-arm64*.img.gz)
+- Initiate the download of the latest Debian boot image zip by clicking [**here**](http://builds.96boards.org/releases/dragonboard410c/linaro/debian/latest/boot-linaro-*-qcom-snapdragon-arm64*.img.gz)
+- Initiate the download of the latest Debian Root File System(RootFS) zip by clicking [**here**](http://builds.96boards.org/releases/dragonboard410c/linaro/debian/latest/linaro-*-developer-qcom-snapdragon-arm64*.img.gz)
 
   Their names will be similar to the following:
-  - ./boot-linaro-jessie-qcom-snapdragon-arm64-BUILD#.img.gz
-  - ./linaro-jessie-developer-qcom-snapdragon-arm64-BUILD#.img.gz
+  - ./boot-linaro-DEBIAN_VERSION-qcom-snapdragon-arm64-BUILD#.img.gz
+  - ./linaro-DEBIAN_VERSION-developer-qcom-snapdragon-arm64-BUILD#.img.gz
 
   Where BUILD# is the date/Build stamp for the downloaded file
 
 **Note:** The procedure above loads the command line debian, denoted by
 “developer” in the name.  If the user wishes to load a graphical X
-version based on LXDE, click [**here**](http://builds.96boards.org/releases/dragonboard410c/linaro/debian/latest/linaro-jessie-alip-qcom-snapdragon-arm64*.img.gz) and use this file in the place of the above RootFS file for the rest of this install.  This file's name will be similar to the following:
+version based on LXDE, click [**here**](http://builds.96boards.org/releases/dragonboard410c/linaro/debian/latest/linaro-*-alip-qcom-snapdragon-arm64*.img.gz) and use this file in the place of the above RootFS file for the rest of this install.  This file's name will be similar to the following:
 
 ```shell
-  linaro-jessie-alip-qcom-snapdragon-arm64-BUILD#.img.gz
+  linaro-DEBIAN_VERSION-alip-qcom-snapdragon-arm64-BUILD#.img.gz
 ```
 
 - Flash the boot image and rootfs to the DB410c by executing the
@@ -309,8 +309,8 @@ sudo fastboot devices
 cd <extraction directory>
 
 gunzip *.img.gz
-sudo fastboot flash boot boot-linaro-jessie-qcom-snapdragon-arm64-BUILD#.img
-sudo fastboot flash rootfs linaro-jessie-developer-qcom-snapdragon-arm64-BUILD#.img
+sudo fastboot flash boot boot-linaro-DEBIAN_VERSION-qcom-snapdragon-arm64-BUILD#.img
+sudo fastboot flash rootfs linaro-DEBIAN_VERSION-developer-qcom-snapdragon-arm64-BUILD#.img
 ```
 
 **Note:** Replace BUILD# in the above commands with the file-specific date/build stamp. 
@@ -416,9 +416,9 @@ Contains the Debian boot images and rootFS for both developer (console-only) and
 Also contains the SC Card auto-install file for Debian.
 Files of interest:
 - dragonboard410c_sdcard_install_debian-BUILD#.zip - SD Card Auto-Install file of fastboot recovery, Linux Bootloader, Debian Boot Image, and LXDE RootFS 
-- boot-linaro-jessie-qcom-snapdragon-arm64-BUILD#.img.gz           - Debian Boot Image
-- linaro-jessie-developer-qcom-snapdragon-arm64-BUILD#.img.gz      - Console only Debian RootFS
-- linaro-jessie-alip-qcom-snapdragon-arm64-BUILD#.img.gz           -  LXDE Desktop RootFS
+- boot-linaro-DEBIAN_VERSION-qcom-snapdragon-arm64-BUILD#.img.gz           - Debian Boot Image
+- linaro-DEBIAN_VERSION-developer-qcom-snapdragon-arm64-BUILD#.img.gz      - Console only Debian RootFS
+- linaro-DEBIAN_VERSION-alip-qcom-snapdragon-arm64-BUILD#.img.gz           -  LXDE Desktop RootFS
 - MD5SUMS.txt - Contains checksums for all the zip files to verify that downloads were not corrupted
 
 ### Android Images
