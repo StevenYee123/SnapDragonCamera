@@ -139,14 +139,7 @@ bash -x ${UEFI_TOOLS_DIR}/uefi-build.sh -T GCC49 -b RELEASE -a ${ATF_DIR} -s ${O
 cd ../l-loader
 ln -s ${EDK2_DIR}/Build/HiKey/RELEASE_GCC49/FV/bl1.bin
 ln -s ${EDK2_DIR}/Build/HiKey/RELEASE_GCC49/FV/fip.bin
-arm-linux-gnueabihf-gcc -c -o start.o start.S
-arm-linux-gnueabihf-gcc -c -o debug.o debug.S
-arm-linux-gnueabihf-ld -Bstatic -Tl-loader.lds -Ttext 0xf9800800 start.o debug.o -o loader
-arm-linux-gnueabihf-objcopy -O binary loader temp
-python gen_loader.py -o l-loader.bin --img_loader=temp --img_bl1=bl1.bin
-# XXX sgdisk usage requires sudo
-sudo PTABLE=linux-4g bash -x generate_ptable.sh
-python gen_loader.py -o ptable-linux.img --img_prm_ptable=prm_ptable.img
+make # requires sudo for creating the partition tables
 ```
 
 The files fip.bin, l-loader.bin and ptable-linux.img are now built. All the image files are in $BUILD/l-loader directory. The Fastboot App is at $EDK2_DIR/Build/HiKey/RELEASE_GCC49/AARCH64/AndroidFastbootApp.efi
