@@ -125,10 +125,10 @@ cd ..
 ### Build UEFI for HiKey
 
 ```shell
-export EDK2_DIR=${WORKSPACE}/${BUILD_NUMBER}/edk2
-export ATF_DIR=${WORKSPACE}/${BUILD_NUMBER}/arm-trusted-firmware
-export OPTEE_OS_DIR=${WORKSPACE}/${BUILD_NUMBER}/optee_os
-export UEFI_TOOLS_DIR=${WORKSPACE}/${BUILD_NUMBER}/uefi-tools
+export EDK2_DIR=${PWD}/edk2
+export ATF_DIR=${PWD}/arm-trusted-firmware
+export OPTEE_OS_DIR=${PWD}/optee_os
+export UEFI_TOOLS_DIR=${PWD}/uefi-tools
 
 cd ${EDK2_DIR}
 bash -x ${UEFI_TOOLS_DIR}/uefi-build.sh -T GCC49 -b RELEASE -a ${ATF_DIR} -s ${OPTEE_OS_DIR} hikey
