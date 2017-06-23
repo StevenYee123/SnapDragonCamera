@@ -83,32 +83,56 @@ export PATH="${PWD}/arm-tc/bin:${PWD}/arm64-tc/bin:$PATH"
 ### Get the source code
 
 ```shell
-# --depth 1 means to fetch code without commit history
-git clone -b hikey-aosp --depth 1 https://github.com/96boards-hikey/edk2.git linaro-edk2
-git clone -b hikey --depth 1 https://github.com/96boards-hikey/arm-trusted-firmware.git
-git clone -b hikey-aosp --depth 1 https://github.com/96boards-hikey/LinaroPkg.git
-git clone --depth 1 https://github.com/96boards-hikey/l-loader.git
-git clone git://git.linaro.org/uefi/uefi-tools.git
+UEFI_TOOLS_GIT_URL=https://git.linaro.org/uefi/uefi-tools.git
+UEFI_TOOLS_GIT_BRANCH=master
+EDK2_GIT_URL=https://github.com/96boards-hikey/edk2.git
+EDK2_GIT_VERSION="origin/hikey-aosp"
+ATF_GIT_URL=https://github.com/96boards-hikey/arm-trusted-firmware.git
+ATF_GIT_VERSION="origin/hikey"
+OPEN_PLATFORM_PKG_GIT_URL=https://github.com/96boards-hikey/OpenPlatformPkg.git
+OPEN_PLATFORM_PKG_GIT_BRANCH=hikey-aosp
+OPTEE_OS_GIT_URL=https://github.com/OP-TEE/optee_os.git
+OPTEE_GIT_VERSION=master
 
-# Optionally, if also building OP-TEE
-git clone --depth 1 https://github.com/OP-TEE/optee_os.git
+export AARCH64_TOOLCHAIN=GCC49
+
+git clone -b $UEFI_TOOLS_GIT_BRANCH $UEFI_TOOLS_GIT_URL uefi-tools
+
+git clone $EDK2_GIT_URL edk2
+cd edk2
+git checkout -b stable-baseline $EDK2_GIT_VERSION
+cd ..
+
+git clone -b $OPEN_PLATFORM_PKG_GIT_BRANCH $OPEN_PLATFORM_PKG_GIT_URL OpenPlatformPkg
+
+cd edk2; rm -rf OpenPlatformPkg
+ln -s ../OpenPlatformPkg
+cd ..
+
+git clone $ATF_GIT_URL arm-trusted-firmware
+cd arm-trusted-firmware
+git checkout -b stable-baseline $ATF_GIT_VERSION
+cd ..
+
+git clone $OPTEE_OS_GIT_URL optee_os
+cd optee_os
+git checkout -b stable-baseline $OPTEE_GIT_VERSION
+cd ..
 ```
 
 ### Build UEFI for HiKey
 
 ```shell
-export AARCH64_TOOLCHAIN=GCC49
-export EDK2_DIR=${PWD}/linaro-edk2
-export UEFI_TOOLS_DIR=${PWD}/uefi-tools
+export EDK2_DIR=${WORKSPACE}/${BUILD_NUMBER}/edk2
+export ATF_DIR=${WORKSPACE}/${BUILD_NUMBER}/arm-trusted-firmware
+export OPTEE_OS_DIR=${WORKSPACE}/${BUILD_NUMBER}/optee_os
+export UEFI_TOOLS_DIR=${WORKSPACE}/${BUILD_NUMBER}/uefi-tools
 
 cd ${EDK2_DIR}
-${UEFI_TOOLS_DIR}/uefi-build.sh -c ../LinaroPkg/platforms.config -b RELEASE -a ../arm-trusted-firmware hikey
-
-# NOTE: If also building OP-TEE, run below command instead of the one above
-# ${UEFI_TOOLS_DIR}/uefi-build.sh -c ../LinaroPkg/platforms.config -b RELEASE -a ../arm-trusted-firmware -s ../optee_os hikey
+bash -x ${UEFI_TOOLS_DIR}/uefi-build.sh -T GCC49 -b RELEASE -a ${ATF_DIR} -s ${OPTEE_OS_DIR} hikey
 
 # To use UART0 instead of UART3 as the console, uncomment the appropriate line(s) in
-# ../LinaroPkg/platforms.config before running the command above.
+# ${UEFI_TOOLS_DIR}/platforms.config before running the command above.
 
 cd ../l-loader
 ln -s ${EDK2_DIR}/Build/HiKey/RELEASE_GCC49/FV/bl1.bin
