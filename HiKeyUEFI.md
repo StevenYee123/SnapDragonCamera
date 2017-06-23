@@ -105,7 +105,8 @@ cd ..
 
 git clone -b $OPEN_PLATFORM_PKG_GIT_BRANCH $OPEN_PLATFORM_PKG_GIT_URL OpenPlatformPkg
 
-cd edk2; rm -rf OpenPlatformPkg
+cd edk2
+rm -rf OpenPlatformPkg
 ln -s ../OpenPlatformPkg
 cd ..
 
