@@ -96,6 +96,7 @@ OPTEE_GIT_VERSION=master
 
 export AARCH64_TOOLCHAIN=GCC49
 
+git clone https://github.com/96boards-hikey/l-loader.git
 git clone -b $UEFI_TOOLS_GIT_BRANCH $UEFI_TOOLS_GIT_URL uefi-tools
 
 git clone $EDK2_GIT_URL edk2
